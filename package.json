@@ -28,7 +28,7 @@
   "homepage": "https://github.com/xembly/workflow-manager#readme",
   "dependencies": {
     "@actions/core": "^1.6.0",
-    "@actions/github": "^5.0.0",
+    "@actions/github": "^5.1.1",
     "del": "^6.0.0",
     "make-dir": "^3.1.0",
     "tslint": "^6.1.3"
