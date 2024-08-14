@@ -8,6 +8,9 @@ export async function cancelWorkflows() {
 	const { eventName, sha, repo: { owner, repo } } = github.context;
 	const { GITHUB_RUN_ID } = process.env;
 
+	// deprecation notice
+	core.warning(`Cancel functionality should not be used. Use [GitHub's concurrency feature](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/using-concurrency) to cancel any in-progress workflows.`);
+
 	if (isVerbose) core.info(JSON.stringify({ eventName, sha, headSha, refName, owner, repo, GITHUB_RUN_ID }, null, '  '));
 
 	const octokit = github.getOctokit(token);

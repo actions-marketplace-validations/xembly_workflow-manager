@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
 import { deleteAsync as del } from 'del';
-import makeDir from 'make-dir';
+import { makeDirectory } from 'make-dir';
 
 import { isPost, rootDirectory, workspaceDirectory } from './helpers/state';
 import { isVerbose } from './helpers/input';
@@ -26,7 +26,7 @@ export async function clean() {
 		try {
 			// need to rebuild workspace in pre-action
 			core.info(`Rebuilding Workspace: ${workspaceDirectory}`);
-			await makeDir(workspaceDirectory);
+			await makeDirectory(workspaceDirectory);
 		} catch (error: any) {
 			core.setFailed(error.message);
 		}

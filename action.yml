@@ -11,7 +11,7 @@ inputs:
       Only required if running the `cancel` option.
     required: false
   run:
-    description: 'A comma separated list of helper functions to run. Valid options are: clean, cancel'
+    description: 'A comma separated list of helper functions to run. Valid options are: clean, cancel. (Note: cancel option is deprecated)'
     default: clean
     required: false
   verbose:
@@ -19,6 +19,6 @@ inputs:
     default: 'false'
     required: false
 runs:
-  using: node16
+  using: node20
   main: dist/index.js
   post: dist/index.js
